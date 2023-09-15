@@ -1,0 +1,968 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mdesousa-fr.github.io/wiki/aws/getting-started/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../license/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>Getting started - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unlocking-the-cloud-a-guide-to-getting-started-on-aws-the-easy-way" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  AWS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../license/" class="md-tabs__link">
+        
+  
+    
+  
+  License
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            AWS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-aws-account" class="md-nav__link">
+    Setting Up Your AWS Account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safeguarding-your-root-account" class="md-nav__link">
+    Safeguarding Your Root Account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-your-aws-account-for-terraform" class="md-nav__link">
+    Prepare Your AWS Account for Terraform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-a-vpc-and-subnets-with-terraform" class="md-nav__link">
+    Deploying a VPC and Subnets with Terraform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-an-ec2-instance-in-a-new-terraform-project-using-outputs-from-the-vpc-project" class="md-nav__link">
+    Deploying an EC2 Instance in a New Terraform Project Using Outputs from the VPC Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleaning-up-aws-resources" class="md-nav__link">
+    Cleaning Up AWS Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="unlocking-the-cloud-a-guide-to-getting-started-on-aws-the-easy-way">Unlocking the Cloud: A Guide to Getting Started on AWS - The Easy Way</h1>
+<p>In today's digital world, cloud computing isn't just a buzzword; it's an essential skill for both individuals and businesses aiming for growth, scalability, and cost-efficiency. Amazon Web Services (AWS), as one of the leading cloud platforms, offers a comprehensive suite of tools and services that cater to diverse computing needs. However, diving into AWS can seem overwhelming for those who are new to the cloud ecosystem. If that sounds like you, worry no more! This article is designed to be your roadmap for navigating AWS effortlessly.</p>
+<p>Whether you're an entrepreneur looking for a cost-effective way to run your startup's website, a developer wanting to deploy applications at scale, or even a student aiming to get ahead with hands-on experience, this guide will walk you through the essentials of AWS. From setting up an AWS account to deploying your first application, we’ll cover it all in an easy-to-understand manner. By the end of this article, you'll be equipped with the knowledge and confidence to harness the power of AWS for your own projects.</p>
+<p>So let’s clear away the clouds of confusion and step into the illuminating world of Amazon Web Services!</p>
+<h2 id="setting-up-your-aws-account">Setting Up Your AWS Account</h2>
+<p>The first and most crucial step in embarking on your AWS journey is to set up an AWS account. Think of this account as your personal dashboard from which you can access the myriad of services offered by AWS. Here, you can track your usage, manage your services, and set your preferences. Setting up an AWS account is simple, straightforward, and takes only a few minutes. Let's walk through the process.</p>
+<p><strong>Step 1: Navigate to the AWS Homepage</strong></p>
+<ul>
+<li>Open your web browser and go to the <a href="https://aws.amazon.com/">AWS homepage</a>.</li>
+<li>Click on the <ins>Create an AWS Account</ins> button.</li>
+</ul>
+<p><strong>Step 2: Provide Basic Information</strong></p>
+<ul>
+<li>You'll be asked to enter your email address and an AWS account name.</li>
+<li>A verification email will be sent to the provided email address with a verification code.</li>
+<li>After the verification, you'll be asked to enter a password for your account. Make sure to choose a strong, unique password to ensure your account's security.</li>
+</ul>
+<p><strong>Step 3: Enter Your Contact Information</strong></p>
+<ul>
+<li>Fill in your full name, phone number, and address. You can also choose whether this account will be for personal or business use.</li>
+</ul>
+<p><strong>Step 4: Verify Your Identity</strong></p>
+<ul>
+<li>Amazon will send you a verification code via SMS or a phone call.</li>
+<li>Enter the code to verify your identity.</li>
+</ul>
+<p><strong>Step 5: Payment Information</strong></p>
+<ul>
+<li>Even though many AWS services offer free tiers, you'll need to enter your credit card information for verification.</li>
+<li>Rest assured, you won't be charged unless you exceed the free tier limits or subscribe to paid services.</li>
+</ul>
+<p><strong>Step 6: Confirm and Activate</strong></p>
+<ul>
+<li>After entering your payment details, you'll be taken to a confirmation page.</li>
+<li>Click on "Activate" to finalize the setup.</li>
+<li>Once your account is active, you'll be redirected to the AWS Management Console.</li>
+</ul>
+<p><img alt="🎉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f389.svg" title=":tada:" /> Congratulations! You've successfully set up your AWS account. Now you're ready to explore the diverse services that AWS has to offer. Remember, many of these come with a free tier option, so you can start experimenting without incurring extra costs.</p>
+<h2 id="safeguarding-your-root-account">Safeguarding Your Root Account</h2>
+<p>Now that you've set up your AWS account, it's crucial to discuss the importance of securing your root account. The root account is essentially the <strong>master key</strong> to your AWS environment, giving you unrestricted access to all AWS services and resources. While this level of access is powerful, it also poses significant security risks if not managed correctly. Therefore, it's imperative to take steps to secure your root account right from the get-go. Here’s how you can do it:</p>
+<p><strong>Step 1: Enable Multi-Factor Authentication (MFA)</strong></p>
+<ul>
+<li>Multi-Factor Authentication adds an extra layer of security by requiring two or more verification methods – a password and a security token.</li>
+<li>Navigate to the <strong>IAM</strong> (Identity and Access Management) section from your AWS Management Console.</li>
+<li>Under the dashboard, find <strong>Activate MFA on your root account</strong> and follow the steps to enable it.</li>
+</ul>
+<p><strong>Step 2: Use a Strong, Unique Password</strong></p>
+<ul>
+<li>If you haven't already, make sure that your root account password is strong and unique.</li>
+<li>Consider using a reputable password manager to store and manage your passwords securely.</li>
+</ul>
+<p><strong>Step 3: Limit Root Account Usage</strong></p>
+<ul>
+<li>The root account should only be used for tasks that absolutely require full administrative permissions.</li>
+</ul>
+<div class="admonition warning">
+<p>For regular tasks, create IAM users with the necessary permissions to limit the chances of unauthorized or accidental changes.</p>
+</div>
+<p><strong>Step 4: Regularly Review Account Activity</strong></p>
+<ul>
+<li>AWS provides detailed logging features like CloudTrail, which can be configured to monitor and log all activity in your AWS environment.</li>
+<li>Regularly review these logs to ensure that only authorized activities are being carried out.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can also set up CloudWatch alarms on CloudTrail specific events.</p>
+</div>
+<p><strong>Step 5: Set Up Account Recovery Options</strong></p>
+<ul>
+<li>Make sure you have set up and verified a recovery email and phone number.</li>
+<li>These will be critical for account recovery in case you lose access to your root account.</li>
+</ul>
+<p><strong>Step 6: Keep Software and Systems Updated</strong></p>
+<ul>
+<li>Ensure that all devices used to access your AWS root account have the latest security patches and anti-malware software.</li>
+<li>This provides an additional line of defense against potential security threats.</li>
+</ul>
+<p><strong>Bonus: Use AWS Organizations for Multiple Accounts</strong></p>
+<ul>
+<li>If you require multiple AWS accounts for various projects or departments, consider setting up <strong>AWS Organizations</strong>.</li>
+<li>This allows you to centrally manage billing, create and enforce policies, and apply security measures across all accounts.</li>
+</ul>
+<p>By taking these security measures, you significantly reduce the risk of unauthorized access to your AWS resources. Remember, cybersecurity is an ongoing process, not a one-time setup. Always stay vigilant and keep abreast of best practices to ensure your AWS environment remains secure.</p>
+<h2 id="prepare-your-aws-account-for-terraform">Prepare Your AWS Account for Terraform</h2>
+<p>Terraform is an Infrastructure as Code (IaC) tool that allows you to build, change, and manage infrastructure in a straightforward, efficient manner. Using Terraform with AWS can make your cloud journey incredibly smooth, allowing you to automate resource deployment and scale effortlessly. Before diving into Terraform commands and script files, you'll need to prepare your AWS account for its integration. Here's how:</p>
+<p><strong>Step 1: Install Terraform on Your Local Machine</strong></p>
+<ul>
+<li>You'll first need to download and install Terraform on your computer.</li>
+<li>Follow the <a href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli">official installation guide</a> based on your operating system.</li>
+</ul>
+<p><strong>Step 2: Create an IAM User for Terraform</strong></p>
+<ul>
+<li>Log into your AWS Management Console and navigate to the IAM (Identity and Access Management) section.</li>
+<li>Create a new IAM user with programmatic access. This will generate an Access Key ID and Secret Access Key.</li>
+<li>Assign the necessary permissions to this IAM user. It’s good practice to follow the principle of least privilege, only granting the permissions required for your specific use-case.</li>
+</ul>
+<p><strong>Step 3: Configure AWS CLI with the IAM User Credentials</strong></p>
+<ul>
+<li>If you haven’t already, <a href="https://aws.amazon.com/cli/">install the AWS CLI</a> on your computer.</li>
+<li>Run <code>aws configure</code> in the terminal and input the Access Key ID and Secret Access Key for the IAM user you created.</li>
+</ul>
+<p><strong>Bonus: Create an S3 Bucket and a DynamoDB Table for Terraform</strong></p>
+<ul>
+<li>Log into your AWS Management Console and navigate to the S3 (Simple Storage Service) section.</li>
+<li>Create a new bucket. It will be used to remotely store Terraform state files.</li>
+<li>Navigate to the DynamoDB section.</li>
+<li>Create a DynamoDB Standard-IA table with on-demand capacity. It will be used to manage Terraform state lock to avoid parallel execution of the same Terraform project.</li>
+</ul>
+<p><strong>Bonus#2: Create Needed AWS Resources by Using a CloudFormation Template</strong></p>
+<ul>
+<li>Log into your AWS Management Console and navigate to the CloudFormation section.</li>
+<li>Create a stack by using the CloudFormation template bellow.</li>
+<li>When the stack is completely deployed, you still need to configure AWS CLI with the IAM User credentials. You can retrieve the credentials on Secrets Manager section.</li>
+</ul>
+<p>This CloudFormation stack create the following resources:</p>
+<ul>
+<li>An IAM User <strong>terraform</strong> with <strong>AdministratorAccess</strong> policy and an Access Key for programmatic access.</li>
+<li>A secret <strong>iam/user/terraform/credentials</strong> on Secrets Manager to store Access Key sensitive values.</li>
+<li>An S3 bucket <strong>terraform-state-${AWS::AccountId}</strong> with versioning enabled and a bucket policy that <ins>only allow terraform user to perform GET, PUT and DELETE actions on objects</ins>.</li>
+<li>A DynamoDB table <strong>terraform-state-lock</strong>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This CloudFormation template can be improve by setting encryption using custom KMS keys, restrict rights of the Terraform user and restrict access of the Terraform resources.</p>
+</div>
+<div class="language-yaml highlight"><span class="filename">aws-cfn-terraform-init.yaml</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="nt">AWSTemplateFormatVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2010-09-09</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="nt">Resources</span><span class="p">:</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">  </span><span class="nt">TerraformUser</span><span class="p">:</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::IAM::User</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">    </span><span class="nt">Properties</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">      </span><span class="nt">UserName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">terraform</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">      </span><span class="nt">ManagedPolicyArns</span><span class="p">:</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:iam::aws:policy/AdministratorAccess</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">  </span><span class="nt">TerraformUserAccessKey</span><span class="p">:</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::IAM::AccessKey</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">    </span><span class="nt">Properties</span><span class="p">:</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><a href="#__codelineno-0-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">      </span><span class="nt">UserName</span><span class="p">:</span><span class="w"> </span><span class="kt">!Ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TerraformUser</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><a href="#__codelineno-0-15"><span class="linenos" data-linenos="15 "></span></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><a href="#__codelineno-0-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">  </span><span class="nt">TerraformUserSecret</span><span class="p">:</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><a href="#__codelineno-0-17"><span class="linenos" data-linenos="17 "></span></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::SecretsManager::Secret</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><a href="#__codelineno-0-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">    </span><span class="nt">Properties</span><span class="p">:</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><a href="#__codelineno-0-19"><span class="linenos" data-linenos="19 "></span></a><span class="w">      </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">iam/user/${TerraformUser}/credentials</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><a href="#__codelineno-0-20"><span class="linenos" data-linenos="20 "></span></a><span class="w">      </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Access Key of terraform user</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><a href="#__codelineno-0-21"><span class="linenos" data-linenos="21 "></span></a><span class="w">      </span><span class="nt">SecretString</span><span class="p">:</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="s">&#39;{&quot;AWS_ACCESS_KEY_ID&quot;:&quot;${TerraformUserAccessKey}&quot;,</span><span class="nv"> </span><span class="s">&quot;AWS_SECRET_ACCESS_KEY&quot;:&quot;${TerraformUserAccessKey.SecretAccessKey}&quot;}&#39;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><a href="#__codelineno-0-22"><span class="linenos" data-linenos="22 "></span></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><a href="#__codelineno-0-23"><span class="linenos" data-linenos="23 "></span></a><span class="w">  </span><span class="nt">TerraformBucket</span><span class="p">:</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><a href="#__codelineno-0-24"><span class="linenos" data-linenos="24 "></span></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::S3::Bucket</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><a href="#__codelineno-0-25"><span class="linenos" data-linenos="25 "></span></a><span class="w">    </span><span class="nt">DeletionPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Retain</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><a href="#__codelineno-0-26"><span class="linenos" data-linenos="26 "></span></a><span class="w">    </span><span class="nt">Properties</span><span class="p">:</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><a href="#__codelineno-0-27"><span class="linenos" data-linenos="27 "></span></a><span class="w">      </span><span class="nt">BucketName</span><span class="p">:</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">terraform-state-${AWS::AccountId}</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><a href="#__codelineno-0-28"><span class="linenos" data-linenos="28 "></span></a><span class="w">      </span><span class="nt">VersioningConfiguration</span><span class="p">:</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><a href="#__codelineno-0-29"><span class="linenos" data-linenos="29 "></span></a><span class="w">        </span><span class="nt">Status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enabled</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><a href="#__codelineno-0-30"><span class="linenos" data-linenos="30 "></span></a>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><a href="#__codelineno-0-31"><span class="linenos" data-linenos="31 "></span></a><span class="w">  </span><span class="nt">TerraformBucketPolicy</span><span class="p">:</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><a href="#__codelineno-0-32"><span class="linenos" data-linenos="32 "></span></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::S3::BucketPolicy</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><a href="#__codelineno-0-33"><span class="linenos" data-linenos="33 "></span></a><span class="w">    </span><span class="nt">Properties</span><span class="p">:</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><a href="#__codelineno-0-34"><span class="linenos" data-linenos="34 "></span></a><span class="w">      </span><span class="nt">Bucket</span><span class="p">:</span><span class="w"> </span><span class="kt">!Ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TerraformBucket</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><a href="#__codelineno-0-35"><span class="linenos" data-linenos="35 "></span></a><span class="w">      </span><span class="nt">PolicyDocument</span><span class="p">:</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><a href="#__codelineno-0-36"><span class="linenos" data-linenos="36 "></span></a><span class="w">        </span><span class="nt">Statement</span><span class="p">:</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><a href="#__codelineno-0-37"><span class="linenos" data-linenos="37 "></span></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Sid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DenyDeleteObject</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><a href="#__codelineno-0-38"><span class="linenos" data-linenos="38 "></span></a><span class="w">            </span><span class="nt">Effect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deny</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><a href="#__codelineno-0-39"><span class="linenos" data-linenos="39 "></span></a><span class="w">            </span><span class="nt">Principal</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;*&quot;</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><a href="#__codelineno-0-40"><span class="linenos" data-linenos="40 "></span></a><span class="w">            </span><span class="nt">Action</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;s3:DeleteObject&quot;</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><a href="#__codelineno-0-41"><span class="linenos" data-linenos="41 "></span></a><span class="w">            </span><span class="nt">Resource</span><span class="p">:</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><a href="#__codelineno-0-42"><span class="linenos" data-linenos="42 "></span></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${TerraformBucket.Arn}/*</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><a href="#__codelineno-0-43"><span class="linenos" data-linenos="43 "></span></a><span class="w">            </span><span class="nt">Condition</span><span class="p">:</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><a href="#__codelineno-0-44"><span class="linenos" data-linenos="44 "></span></a><span class="w">              </span><span class="nt">ArnNotEquals</span><span class="p">:</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><a href="#__codelineno-0-45"><span class="linenos" data-linenos="45 "></span></a><span class="w">                </span><span class="nt">aws:PrincipalArn</span><span class="p">:</span><span class="w"> </span><span class="kt">!GetAtt</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TerraformUser.Arn</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a><a href="#__codelineno-0-46"><span class="linenos" data-linenos="46 "></span></a>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a><a href="#__codelineno-0-47"><span class="linenos" data-linenos="47 "></span></a><span class="w">  </span><span class="nt">TerraformDynamoDBTable</span><span class="p">:</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><a href="#__codelineno-0-48"><span class="linenos" data-linenos="48 "></span></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::DynamoDB::Table</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><a href="#__codelineno-0-49"><span class="linenos" data-linenos="49 "></span></a><span class="w">    </span><span class="nt">Properties</span><span class="p">:</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><a href="#__codelineno-0-50"><span class="linenos" data-linenos="50 "></span></a><span class="w">      </span><span class="nt">TableName</span><span class="p">:</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">terraform-state-lock</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><a href="#__codelineno-0-51"><span class="linenos" data-linenos="51 "></span></a><span class="w">      </span><span class="nt">BillingMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PAY_PER_REQUEST</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><a href="#__codelineno-0-52"><span class="linenos" data-linenos="52 "></span></a><span class="w">      </span><span class="nt">TableClass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STANDARD_INFREQUENT_ACCESS</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><a href="#__codelineno-0-53"><span class="linenos" data-linenos="53 "></span></a><span class="w">      </span><span class="nt">AttributeDefinitions</span><span class="p">:</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><a href="#__codelineno-0-54"><span class="linenos" data-linenos="54 "></span></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">AttributeName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LockID</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a><a href="#__codelineno-0-55"><span class="linenos" data-linenos="55 "></span></a><span class="w">          </span><span class="nt">AttributeType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">S</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><a href="#__codelineno-0-56"><span class="linenos" data-linenos="56 "></span></a><span class="w">      </span><span class="nt">KeySchema</span><span class="p">:</span>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a><a href="#__codelineno-0-57"><span class="linenos" data-linenos="57 "></span></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">AttributeName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LockID</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a><a href="#__codelineno-0-58"><span class="linenos" data-linenos="58 "></span></a><span class="w">          </span><span class="nt">KeyType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HASH</span>
+</span></code></pre></div>
+<h2 id="deploying-a-vpc-and-subnets-with-terraform">Deploying a VPC and Subnets with Terraform</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This part may incur costs on your AWS account.</p>
+</div>
+<p>After preparing your AWS account to work with Terraform, it's time to delve into more advanced functionalities. One of the foundational aspects of any cloud deployment is the network, and in AWS, a Virtual Private Cloud (VPC) often serves as the backbone of your networking infrastructure. Using Terraform, you can automate the deployment of a VPC along with its associated subnets. Let's dive into how you can do this:</p>
+<p><strong>Step 1: Initialize Your Terraform Project Structure</strong></p>
+<ul>
+<li>Create a new folder for the Terraform project. You can reproduce the structure bellow.</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tf-project/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├─ backend.tf
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├─ main.tf
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>└─ providers.tf
+</span></code></pre></div>
+<ul>
+<li>The <code>backend.tf</code> file will contains the configuration of our S3 remote backend.</li>
+<li>The <code>main.tf</code> file will contains the configuration of our VPC.</li>
+<li>The <code>providers.tf</code> file will contains the configuration of the AWS provider.</li>
+</ul>
+<p><strong>Step 2: Configure the S3 Remote Backend</strong></p>
+<ul>
+<li>Add the S3 remote backend configuration on the <code>backend.tf</code> file.</li>
+</ul>
+<div class="language-hcl highlight"><span class="filename">backend.tf</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="kr">backend</span><span class="w"> </span><span class="nv">&quot;s3&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">        </span><span class="na">bucket</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-state-&lt;account-id&gt;&quot;</span><span class="c1"> # (1)!</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">        </span><span class="na">dynamodb_table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-state-lock&quot;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">        </span><span class="na">encrypt</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos="6 "></span></a><span class="w">        </span><span class="na">key</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vpc/terraform.tfstate&quot;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos="7 "></span></a><span class="w">        </span><span class="na">region</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;eu-west-1&quot;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos="8 "></span></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos="9 "></span></a><span class="p">}</span>
+</span></code></pre></div>
+<ol>
+<li><img alt="✍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/270d.svg" title=":writing_hand:" /> Don't forget to replace <code>&lt;account-id&gt;</code> by your account ID.</li>
+</ol>
+<p>As you can see, we are using the <ins>S3 bucket</ins> and the <ins>DynamoDB table</ins> provisioned earlier to manage our Terraform backend.</p>
+<p>The <code>key</code> attribute will be the object name on the S3 bucket.</p>
+<p><strong>Step 3: Configure the AWS Provider</strong></p>
+<ul>
+<li>Add the AWS provider configuration on the <code>providers.tf</code> file.</li>
+</ul>
+<div class="language-hcl highlight"><span class="filename">providers.tf</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;aws&quot;</span><span class="w"> </span><span class="p">{}</span>
+</span></code></pre></div>
+<p>The AWS provider configuration is get from the AWS CLI configuration so we don't need to overide it.</p>
+<p><strong>Step 4: Define the VPC Configuration</strong></p>
+<ul>
+<li>Define the VPC configuration on the <code>main.tf</code> file.</li>
+</ul>
+<div class="language-hcl highlight"><span class="filename">main.tf</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;vpc&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="w">  </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-aws-modules/vpc/aws&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">  </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;5.1.2&quot;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my-vpc&quot;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">  </span><span class="na">cidr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10.0.0.0/16&quot;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">  </span><span class="na">azs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;eu-west-1a&quot;, &quot;eu-west-1b&quot;</span><span class="p">]</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">  </span><span class="na">database_subnets</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;10.0.0.0/24&quot;, &quot;10.0.1.0/24&quot;</span><span class="p">]</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><a href="#__codelineno-4-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">  </span><span class="na">private_subnets</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;10.0.10.0/24&quot;, &quot;10.0.11.0/24&quot;</span><span class="p">]</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><a href="#__codelineno-4-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">  </span><span class="na">public_subnets</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;10.0.100.0/24&quot;, &quot;10.0.101.0/24&quot;</span><span class="p">]</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><a href="#__codelineno-4-13"><span class="linenos" data-linenos="13 "></span></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><a href="#__codelineno-4-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">  </span><span class="na">enable_nat_gateway</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><a href="#__codelineno-4-15"><span class="linenos" data-linenos="15 "></span></a><span class="p">}</span>
+</span></code></pre></div>
+<p>To simplify the VPC configuration we will use a Terraform module developed by AWS. This module allow us to configure many ressources with few informations.</p>
+<p>Here we will deploy a VPC <code>my-vpc</code> with <code>10.0.0.0/16</code> as base CIDR block. On this VPC we will create 3 groups of 2 subnets with specific purpose.</p>
+<ul>
+<li><strong>Database subnets</strong> will be used by database resources. The resources on these subnets cannot be accessed directly from internet.</li>
+<li><strong>Private subnets</strong> will be used by any resource that is not a database or publicly accessible. The resources on these subnets cannot be accessed directly from internet.</li>
+<li><strong>Public subnets</strong> will be used by any resource that can be publicly accessible. The resources on these subnets can be accessed from internet.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A public subnet is defined by its route table.
+If the default route of the attached route table redirect the traffic to an Internet Gateway the subnet is considered as public.</p>
+<p>A resource on a public subnet is not publicly accessible by default. You have to configure a security group that enable public access.</p>
+</div>
+<p><strong>Step 5: Initialize Your Terraform Project</strong></p>
+<ul>
+<li>Open a terminal and navigate to the Terraform project</li>
+<li>Run <code>terraform init</code> to initialize the Terraform project and download necessary providers and modules.</li>
+</ul>
+<p><strong>Step 6: Validate the Configuration</strong></p>
+<ul>
+<li>Run <code>terraform validate</code> to validate the configuration.</li>
+</ul>
+<p><strong>Step 7: Review and Deploy</strong></p>
+<ul>
+<li>Run <code>terraform plan</code> to review the actions that Terraform will take.</li>
+<li>If the plan looks as expected, apply the configuration by executing <code>terraform apply</code>. You will be asked to type <code>yes</code> to confirm the deployment.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It's recommended to use <code>terraform plan -out=FILENAME</code> and <code>terraform apply FILENAME</code> to only make actions that have been displayed on the plan.</p>
+</div>
+<p><strong>Step 8: Confirm the Deployment</strong></p>
+<p>Once the process is complete, you should see an output displaying the IDs and other details of the resources you've just created.</p>
+<p><img alt="🎉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f389.svg" title=":tada:" /> Congratulations, you've successfully automated the deployment of a VPC and subnets in AWS using Terraform! These foundational components will serve as the backbone for your cloud applications and services, allowing for greater scalability and flexibility.</p>
+<h2 id="deploying-an-ec2-instance-in-a-new-terraform-project-using-outputs-from-the-vpc-project">Deploying an EC2 Instance in a New Terraform Project Using Outputs from the VPC Project</h2>
+<p>In many real-world scenarios, infrastructure is managed across multiple Terraform projects for better modularity, reusability, and separation of concerns.</p>
+<p>In the previous section we have deployed a VPC using a dedicated Terraform project and we want to use those resources in another project to deploy an EC2 instance. This guide walks you through how to do just that, leveraging the output variables from the VPC project for use in your EC2 project.</p>
+<p><strong>Step 1: Generate Outputs for the VPC Project</strong></p>
+<ul>
+<li>Add <code>outputs.tf</code> new file on the VPC Terraform project.</li>
+<li>Define the outputs for the VPC project.</li>
+</ul>
+<div class="language-hcl highlight"><span class="filename">outputs.tf</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;private_subnet_ids&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">module.vpc.private_subnets</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos="3 "></span></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Here we will add an output <code>private_subnet_ids</code> that consist of a list of the private subnet IDs.</p>
+<ul>
+<li>Run <code>terraform apply</code> to add this output to the Terraform state.</li>
+</ul>
+<p><strong>Step 2: Initialize Your EC2 Terraform Project</strong></p>
+<ul>
+<li>Create a new folder for the EC2 Terraform Project.</li>
+<li>To simplify the configuration we will define our configuration on a single file. Create <code>main.tf</code> new file.</li>
+</ul>
+<div class="language-hcl highlight"><span class="filename">main.tf</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="w">    </span><span class="kr">backend</span><span class="w"> </span><span class="nv">&quot;s3&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">        </span><span class="na">bucket</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-state-&lt;account-id&gt;&quot;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">        </span><span class="na">dynamodb_table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-state-lock&quot;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><a href="#__codelineno-6-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">        </span><span class="na">encrypt</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><a href="#__codelineno-6-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">        </span><span class="na">key</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ec2/terraform.tfstate&quot;</span><span class="c1"> # (1)!</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><a href="#__codelineno-6-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">        </span><span class="na">region</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;eu-west-1&quot;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><a href="#__codelineno-6-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><a href="#__codelineno-6-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="p">}</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><a href="#__codelineno-6-10"><span class="linenos" data-linenos="10 "></span></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><a href="#__codelineno-6-11"><span class="linenos" data-linenos="11 "></span></a><span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;aws&quot;</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><a href="#__codelineno-6-12"><span class="linenos" data-linenos="12 "></span></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><a href="#__codelineno-6-13"><span class="linenos" data-linenos="13 "></span></a><span class="kr">data</span><span class="w"> </span><span class="nc">&quot;terraform_remote_state&quot;</span><span class="w"> </span><span class="nv">&quot;vpc&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><a href="#__codelineno-6-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">  </span><span class="na">backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;s3&quot;</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><a href="#__codelineno-6-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">  </span><span class="nb">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><a href="#__codelineno-6-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">    </span><span class="na">bucket</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-state-&lt;account-id&gt;&quot;</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><a href="#__codelineno-6-17"><span class="linenos" data-linenos="17 "></span></a><span class="w">    </span><span class="na">dynamodb_table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-state-lock&quot;</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a><a href="#__codelineno-6-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">    </span><span class="na">encrypt</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a><a href="#__codelineno-6-19"><span class="linenos" data-linenos="19 "></span></a><span class="w">    </span><span class="na">key</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vpc/terraform.tfstate&quot;</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20"></a><a href="#__codelineno-6-20"><span class="linenos" data-linenos="20 "></span></a><span class="w">    </span><span class="na">region</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;eu-west-1&quot;</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21"></a><a href="#__codelineno-6-21"><span class="linenos" data-linenos="21 "></span></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a><a href="#__codelineno-6-22"><span class="linenos" data-linenos="22 "></span></a><span class="p">}</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a><a href="#__codelineno-6-23"><span class="linenos" data-linenos="23 "></span></a>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a><a href="#__codelineno-6-24"><span class="linenos" data-linenos="24 "></span></a><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;ec2-instance&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a><a href="#__codelineno-6-25"><span class="linenos" data-linenos="25 "></span></a><span class="w">  </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-aws-modules/ec2-instance/aws&quot;</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a><a href="#__codelineno-6-26"><span class="linenos" data-linenos="26 "></span></a><span class="w">  </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;5.5.0&quot;</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a><a href="#__codelineno-6-27"><span class="linenos" data-linenos="27 "></span></a>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28"></a><a href="#__codelineno-6-28"><span class="linenos" data-linenos="28 "></span></a><span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my-ec2&quot;</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29"></a><a href="#__codelineno-6-29"><span class="linenos" data-linenos="29 "></span></a>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30"></a><a href="#__codelineno-6-30"><span class="linenos" data-linenos="30 "></span></a><span class="w">  </span><span class="na">instance_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;t2.micro&quot;</span>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31"></a><a href="#__codelineno-6-31"><span class="linenos" data-linenos="31 "></span></a><span class="w">  </span><span class="na">subnet_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.terraform_remote_state.vpc.outputs.private_subnet_ids[0</span><span class="p">]</span><span class="c1"> # (2)!</span>
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32"></a><a href="#__codelineno-6-32"><span class="linenos" data-linenos="32 "></span></a><span class="p">}</span>
+</span></code></pre></div>
+<ol>
+<li><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" title=":warning:" /> Don't forget to change the backend key.</li>
+<li>We use the first private subnet id.</li>
+</ol>
+<p>To get data from another Terraform project we can use <code>terraform_remote_state</code> to retrieve data from the remote state of the targeted project.</p>
+<p><strong>Step 3: Initialize, Validate, Review and Deploy</strong></p>
+<ul>
+<li>Run <code>terraform init</code> to initialize the Terraform project.</li>
+<li>Run <code>terraform validate</code> to validate the configuration.</li>
+<li>Run <code>terraform plan</code> to review the actions that Terraform will take.</li>
+<li>Run <code>terraform apply</code> to apply the configuration.</li>
+</ul>
+<p><img alt="🎉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f389.svg" title=":tada:" /> Congratulations! You've now successfully deployed an EC2 instance in a new Terraform project, reusing the output variables generated from your initial VPC project. This modularity is one of Terraform's strong suits, enabling scalable and maintainable infrastructure as code practices.</p>
+<h2 id="cleaning-up-aws-resources">Cleaning Up AWS Resources</h2>
+<p>While Terraform is fantastic for provisioning resources, it’s equally competent at tearing them down when they're no longer needed. It’s a critical aspect of Infrastructure as Code, especially when you want to manage costs or decommission a project. This guide walks you through the steps required to safely destroy the Terraform projects we have deployed in AWS.</p>
+<p><strong>Step 1: Plan the Destruction of EC2 Project</strong></p>
+<p>We need to destroy the EC2 project first because it depends on resources deployed by the VPC project.</p>
+<ul>
+<li>With a terminal, navigate to the EC2 project.</li>
+<li>Run <code>terraform plan -destroy</code> to review the actions that Terraform will take to destroy the project.</li>
+</ul>
+<p><strong>Step 2: Execute the Destruction of EC2 Project</strong></p>
+<ul>
+<li>Run <code>terraform destroy</code> when you are certain about what you're destroying. You will be asked to type <code>yes</code> and hit enter to validate the operation.</li>
+</ul>
+<p><strong>Step 3: Do the same for VPC Project</strong></p>
+<ul>
+<li>With a terminal, navigate to the VPC project.</li>
+<li>Run <code>terraform plan -destroy</code> to review the actions that Terraform will take to destroy the project.</li>
+<li>Run <code>terraform destroy</code> when you are certain about what you're destroying. You will be asked to type <code>yes</code> and hit enter to validate the operation.</li>
+</ul>
+<p>After the command completes, log into your AWS Console and navigate to the appropriate sections (EC2 Dashboard, VPC Dashboard, etc.) to confirm that the resources have been terminated or deleted.</p>
+<p>And just like that, you’ve safely decommissioned your Terraform project and cleaned up your AWS environment. While the terraform destroy command is powerful, it should be used judiciously. Always make sure to double-check the resources that will be affected and back up essential data before proceeding.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../license/" class="md-footer__link md-footer__link--next" aria-label="Next: License" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                License
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/mdesousa-fr" target="_blank" rel="noopener" title="mdesousa-fr on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/mathieu-de-sousa-devops/" target="_blank" rel="noopener" title="Mathieu DE SOUSA on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.footer", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "toc.follow", "toc.integrate", "navigation.top", "search.suggest"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>
